@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina's Portfolio</title>
+</head>
+<body>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #9c2d49;
+            text-align: center;
+        }
+
+        a {
+            color: #ffffff;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Header */
+        .header {
+            padding: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header__top {
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .header__logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header__nav-link {
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .header__content {
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 85%;
+            margin: auto;
+        }
+
+        .header__title {
+            font-size: 4rem;
+            background: linear-gradient(98deg, #9c2d49, #283593);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 4.2rem;
+        }
+
+        .header__description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .section--projects {
+            background-color: #222;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            background-color: #2a2a2a;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project__title {
+            font-size: 1.75rem;
+            color: #9c2d49;
+        }
+
+        .project__link {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skills-list__item {
+            padding: 10px 20px;
+            background-color: #9c2d49;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            flex-grow: 1;
+        }
+
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact__item {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #222;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+
+            .header {
+                padding: 30px;
+            }
+
+            .header__title {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+
+            .header__description {
+                font-size: 1.1rem;
+                text-align: justify;
+            }
+
+            .header__logo {
+                font-size: 1.1rem;
+            }
+
+            .project {
+                max-width: 100%;
+            }
+
+            .project__title { 
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header__top {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header__title {
+                font-size: 2rem;
+                line-height: 2.2rem;
+            }
+
+            .header__description {
+                font-size: 1rem;
+            }
+
+            .skills-list__item {
+                flex-basis: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__top">
+            <a href="#" class="header__logo">Marina Mkrtchyan</a>
+            <nav class="header__nav">
+                <a href="#projects" class="header__nav-link">Projects</a>
+                <a href="#skills" class="header__nav-link">Skills</a>
+                <a href="#contact" class="header__nav-link">Contacts</a>
+            </nav>
+        </div>
+        <div class="header__content">
+            <h1 class="header__title">Frontend Developer / Markup Developer</h1>
+            <p class="header__description">I am a highly skilled Frontend Developer with extensive experience in crafting visually stunning, user-friendly, and responsive web applications. My expertise lies in leveraging modern web technologies, including HTML, CSS, and JavaScript, to build seamless and engaging digital experiences. As a reliable team member, I am accustomed to taking on challenging tasks and collaborating effectively with cross-functional teams to deliver high-quality solutions. My ability to adapt to new technologies and my commitment to continuous learning make me a valuable asset to any team.</p>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section--projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3 class="project__title">JDoodle</h3>
+            <p>JDoodle is an online programming platform that provides an AI-powered compiler and Integrated Development Environment (IDE) supporting over 85 programming languages, including Java, C++, and Python. Established in 2013, it offers a user-friendly interface for coding, compiling, and executing code directly from a web browser.</p>
+            <a href="https://www.jdoodle.com/" class="project__link">Visit JDoodle</a>
+        </div>
+        <div class="project">
+            <h3 class="project__title">WideWalls</h3>
+            <p>Widewalls is a prominent online platform dedicated to modern and contemporary art, serving as a valuable resource for art lovers and collectors worldwide.</p>
+            <a href="https://www.widewalls.ch/" class="project__link">Visit WideWalls</a>
+        </div>
+        <div class="project">
+            <h3 class="project__title">ITender</h3>
+            <p>iTender is an Armenian platform that streamlines the tendering process, enabling organizations to organize and participate in tenders efficiently.</p>
+            <a href="https://www.itender.am/" class="project__link">Visit ITender</a>
+        </div>
+        <div class="project">
+            <h3 class="project__title">Balex</h3>
+            <p>BALEX is a construction company based in Yerevan, Armenia, established in 2011. The company offers a range of services, including concrete production, construction of multifunctional residential buildings and complexes, and rental of modern construction equipment.</p>
+            <a href="https://balex.am/" class="project__link">Visit Balex</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="skills-list"></ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contacts</h2>
+        <div class="contact">
+            <p class="contact__item">Email: <a href="mailto:rina.ramm101102@gmail.com">rina.ramm101102@gmail.com</a></p>
+            <p class="contact__item">GitHub: <a href="https://github.com/Marina0022">Marina0022</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p> &copy; <span id="year"></span> Marina. All rights reserved. </p>
+    </footer>
+
+    <script>
+        // Update Year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Populate Skills List
+        const skillsListContainer = document.querySelector(".skills-list");
+        const skillsList = ['HTML', 'HTML5', 'CSS', 'CSS3', 'SASS/SCSS', 'LESS', 'CSS Animations', 'SEO optimization', 'Flexbox', 'Gridbox', 'BEM', 'Bootstrap', 'Tailwind', 'JavaScript', 'TypeScript', 'JQuery', 'Vue.js', 'Nuxt.js', 'VueX', 'Pinia', 'Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe XD'];
+
+        skillsList.forEach(skill => {
+            const li = document.createElement("li");
+            li.textContent = skill;
+            li.classList.add("skills-list__item");
+            skillsListContainer.append(li);
+        });
+
+        // Smooth Scrolling for Menu Links
+        document.querySelectorAll('.header__nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                const targetId = link.getAttribute('href'); // Get the target section ID
+                const targetSection = document.querySelector(targetId); // Find the target section
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+                }
+            });
+        });
+    </script>
+</body>
+</html>
